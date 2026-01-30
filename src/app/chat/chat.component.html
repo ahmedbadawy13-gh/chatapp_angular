@@ -1,0 +1,51 @@
+<div class="chat-container">
+  <h2 class="title">Minimal ChatGPT-like Demo</h2>
+
+  <div *ngIf="errorMsg" class="error-banner">
+    {{ errorMsg }}
+  </div>
+
+  <div class="messages" id="messageList">
+    <div
+      *ngFor="let m of messages; trackBy: trackByIndex"
+      class="message"
+      [ngClass]="{ user: m.role === 'user', assistant: m.role === 'assistant' }"
+    >
+      <div class="bubble">
+        <div class="role" *ngIf="m.role !== 'user'">Assistant</div>
+        <div class="role" *ngIf="m.role === 'user'">You</div>
+        <div class="content">{{ m.content }}</div>
+        <div class="timestamp" *ngIf="m.timestamp">
+          {{ m.timestamp | date: 'shortTime' }}
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isLoading" class="thinking">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span>Thinking…</span>
+    </div>
+  </div>
+
+  <div class="input-row">
+    <textarea
+      [(ngModel)]="userInput"
+      rows="3"
+      placeholder="Type your message… (Enter to send, Shift+Enter for newline)"
+      (keydown)="onKeyDownEnter($event)"
+    ></textarea>
+
+    <div class="actions">
+      <button
+        class="send-btn"
+        (click)="send()"
+        [disabled]="isLoading || !userInput.trim()"
+      >
+        Send
+      </button>
+      <button class="clear-btn" type="button" (click)="clearChat()">
+        Clear chat
+      </button>
+    </div>
+  </div>
+</div>
