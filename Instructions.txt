@@ -7,6 +7,19 @@ git clone https://github.com/ahmedbadawy13-gh/chatapp_angular.git mslearn-ai-fou
 cd mslearn-ai-foundry-chatapp-ab/src/app/chat
 ls -a -l
 
+
+npm install --save-dev @angular-builders/custom-webpack dotenv
+npm install @azure/ai-projects
+npm install @azure/identity
+npm install openai
+
+code ./src/environments/environment.ts
+insert endpoint URL
+insert endpoint API Key
+confirm that model is gpt-4o, not anything else
+ 
+
+
 npm install
 
 
