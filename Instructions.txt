@@ -1,0 +1,19 @@
+Instructions
+============
+
+rm -r mslearn-ai-foundry-chatapp-ab -f
+git clone https://github.com/ahmedbadawy13-gh/chatapp_angular.git mslearn-ai-foundry-chatapp-ab
+
+cd mslearn-ai-foundry-chatapp-ab/src/app/chat
+ls -a -l
+
+npm install
+
+
+
+python -m venv labenv
+./labenv/bin/Activate.ps1
+pip install -r requirements.txt azure-identity azure-ai-projects openai
+
+npm install -r azure-identity azure-ai-projects openai
+
