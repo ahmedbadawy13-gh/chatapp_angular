@@ -1,37 +1,59 @@
-# chatapp_angular
-Project Description
-A minimal ChatGPT‑like Angular app that:
+# ChatappAngular
 
-Renders a simple chat interface (user/assistant bubbles, scrollable history).
-Calls a configurable GPT endpoint (e.g., Azure OpenAI / Microsoft Foundry / your proxy) directly from the browser using Angular HttpClient.
-Shows loading state and friendly error messages.
-Preserves conversation history across messages (basic in-memory memory).
-Keeps code small and readable for demos/teaching.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
 
-Prerequisites
+## Development server
 
-Node.js (LTS recommended) and npm
-Angular CLI (v17+):
+To start a local development server, run:
 
-npm install -g @angular/cli
+```bash
+ng serve
+```
 
-Create the Angular Project (if you don’t have one yet)
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-ng new ng-gpt-chat --style=css --routing=false
-cd ng-gpt-chat
+## Code scaffolding
 
-Copy the provided files into the respective paths:
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-src/app/app.module.ts
-src/app/chat/chat.component.ts
-src/app/chat/chat.component.html
-src/app/chat/chat.component.css
-src/app/services/chat.service.ts
-src/app/models/chat.models.ts
-src/environments/environment.ts
-src/environments/environment.development.ts
-(Optional) src/app/app.component.html
+```bash
+ng generate component component-name
+```
 
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-If the folders don’t exist, create them (chat, services, models, environments).
+```bash
+ng generate --help
+```
 
+## Building
+
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
